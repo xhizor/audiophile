@@ -1,0 +1,153 @@
+.c-navbar {
+  &__container {
+    position: relative;
+    display: flex;
+    padding: 3.2rem 0;
+    color: $color-white;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-bottom: 1px solid $color-white;
+      opacity: .2;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex: 1;
+
+      &__hamburger {
+        display: none;
+
+        svg {
+          path {
+            transition: fill .15s ease-in;
+          }
+        }
+
+        &:hover,
+        &:focus {
+          svg {
+            path {
+              fill: $color-brand-orange;
+            }
+          }
+        }
+      }
+
+      &__logo {
+        display: flex;
+
+        &:focus-visible {
+          outline: 1.5px dashed $color-brand-orange;
+          outline-offset: 2.5px;
+        }
+      }
+    }
+
+    &__items {
+      display: flex;
+      gap: 3.4rem;
+      flex: 2.2;
+      padding: 0 2rem;
+      margin: 0 -2rem;
+
+      &__item {
+        @include linkStyles($color-white, $color-brand-orange);
+
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 1.92;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+
+    &__cart {
+      &__icon {
+        svg {
+          transition: fill .15s ease-in;
+        }
+
+        &:hover,
+        &:focus {
+          svg {
+            path {
+              fill: $color-brand-orange;
+            }
+          }
+        }
+
+        &:focus-visible {
+          outline: 1.5px dashed $color-brand-orange;
+          outline-offset: 2.5px;
+        }
+      }
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    &__container {
+      flex-direction: column;
+
+      &::after {
+        opacity: .1;
+      }
+
+      &__wrapper {
+        &__hamburger {
+          display: flex;
+          align-items: center;
+        }
+
+        &__logo {
+          margin-left: 4.2rem;
+        }
+      }
+
+      &__items {
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 3.2rem 0 0;
+        margin: 0;
+
+        &.is-active {
+          display: flex;
+        }
+      }
+
+      &__cart {
+        position: absolute;
+        right: 0;
+        margin-top: 3px;
+
+        &__img {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-mobile) {
+    &__container {
+      &::after {
+        width: 100vw;
+        transform: translateX(-#{$padding-page-container-mobile});
+      }
+
+      &__wrapper {
+        &__logo {
+          max-width: 14.3rem;
+          width: 100%;
+          margin: 0 auto;
+          transform: translateX(-1.1rem);
+        }
+      }
+    }
+  }
+}

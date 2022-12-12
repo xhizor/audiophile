@@ -3,7 +3,7 @@
   max-width: $max-width-page-container;
   width: 100%;
   margin: 0 auto;
-  padding: 0 $padding-page-container;
+  padding: 0 min($padding-page-container, 11.5%);
   box-sizing: border-box;
   overflow: hidden;
 

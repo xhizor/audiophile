@@ -1,0 +1,15 @@
+$fontsRoute: '../fonts/';
+
+// Manrope medium
+@font-face {
+  font-family: 'Manrope';
+  src: url($fontsRoute + 'Manrope/Manrope-Medium.ttf') format('truetype');
+  font-weight: normal;
+}
+
+// Monrope bold
+@font-face {
+  font-family: 'Manrope';
+  src: url($fontsRoute + 'Manrope/Manrope-Bold.ttf') format('truetype');
+  font-weight: bold;
+}

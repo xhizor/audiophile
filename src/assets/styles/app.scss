@@ -1,0 +1,20 @@
+// Import styles to normalize default browser styles across different browsers
+@import "common/normalize";
+
+// Import global variables
+@import "common/variables";
+
+// Import global colors
+@import "common/colors";
+
+// Import mixins
+@import "common/mixins";
+
+// Import core styles
+@import "common/core";
+
+// Import fonts
+@import "../fonts/fonts";
+
+// Import container styles
+@import "components/container";

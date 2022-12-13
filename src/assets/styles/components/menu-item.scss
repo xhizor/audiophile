@@ -1,0 +1,9 @@
+.c-menu-item {
+  @include linkStyles($color-white, $color-brand-orange);
+
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.92;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

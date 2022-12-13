@@ -51,7 +51,7 @@ const Header: React.FC = () => {
                                 return (
                                     <Link key={id}
                                           to={link}
-                                          className="c-navbar__container__items__item">
+                                          className="c-navbar__container__items__item c-menu-item">
                                         {name}
                                     </Link>
                                 )

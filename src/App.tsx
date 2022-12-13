@@ -1,5 +1,8 @@
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+
+import Home from '../src/pages/home';
+
 import '../src/assets/styles/app.scss';
-import Layout from "./components/layout";
 
 /**
  * App script.
@@ -8,11 +11,11 @@ import Layout from "./components/layout";
  */
 function App() {
     return (
-        <Layout>
-            <div className="c-container">
-                Home page
-            </div>
-        </Layout>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+            </Routes>
+        </BrowserRouter>
     )
 }
 

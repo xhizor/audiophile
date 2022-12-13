@@ -10,7 +10,7 @@ import Layout from "../../components/layout";
 const Home: React.FC = () => {
     return (
         <Layout>
-            Home
+            <div style={{padding: '20rem 0', backgroundColor: 'white'}}>Home</div>
         </Layout>
     )
 };

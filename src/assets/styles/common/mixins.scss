@@ -1,0 +1,44 @@
+// Mixin for responsive content, defines min and max width of the screen on which @content styles are applied.
+@mixin respondBetween($min: 0, $max: 0) {
+  @if $min > 0 and $max > 0 {
+    @media only screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $min > 0 and $max <= 0 {
+    @media only screen and (min-width: $min) {
+      @content;
+    }
+  } @else if $min <= 0 and $max > 0 {
+    @media only screen and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+// Mixin used for defining link styles (hover, focus, focus-within and visited states)
+@mixin linkStyles($color, $hoverColor: null, $textDecoration: none, $hoverTextDecoration: none) {
+  color: $color;
+  text-decoration: $textDecoration;
+  transition: all .15s ease-in;
+
+  &:visited {
+    color: $color;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: $hoverTextDecoration;
+    cursor: pointer;
+
+    @if ($hoverColor != null) {
+      color: $hoverColor;
+    } @else {
+      color: $color;
+    }
+  }
+
+  &:focus-visible {
+    outline: 1.5px dashed $hoverColor;
+    outline-offset: 2.5px;
+  }
+}

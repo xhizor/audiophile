@@ -1,0 +1,15 @@
+// Import section styles
+@import './sections/product-category-hero';
+@import './sections/product-category-products';
+
+.audio-gear-info__container {
+  padding-bottom: 16rem;
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    padding: 2.5rem 0 18rem;
+  }
+
+  @include respondBetween(0, $breakpoint-mobile) {
+    padding: 0 0 12rem;
+  }
+}

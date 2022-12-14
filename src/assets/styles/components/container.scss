@@ -1,0 +1,17 @@
+.c-container {
+  position: relative;
+  max-width: $max-width-page-container;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 min($padding-page-container, 11.5%);
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    padding: 0 $padding-page-container-tablet;
+  }
+
+  @include respondBetween(0, $breakpoint-mobile) {
+    padding: 0 $padding-page-container-mobile;
+  }
+}

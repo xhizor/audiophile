@@ -1,0 +1,43 @@
+.product-category-products {
+  background-color: $color-brand-gray-light;
+
+  &__container {
+    padding: 16rem 0 12rem;
+
+    &__products {
+      display: flex;
+      flex-direction: column;
+      gap: 16rem;
+
+      &__item {
+        &__img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+        }
+
+        .c-two-columns-content-image {
+          &__content__title {
+            width: min-content;
+          }
+        }
+      }
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    &__container {
+      padding: 12rem 0 2rem;
+
+      &__products {
+        gap: 12rem;
+      }
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-mobile) {
+    &__container {
+      padding: 6.5rem 0 8rem;
+    }
+  }
+}

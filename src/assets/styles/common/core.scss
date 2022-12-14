@@ -1,0 +1,16 @@
+html {
+  font-size: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: normal;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-size: 1.5rem;
+    background-color: #0E0E0E;
+  }
+}

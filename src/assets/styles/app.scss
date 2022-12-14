@@ -1,0 +1,53 @@
+// Import styles to normalize default browser styles across different browsers
+@import "common/normalize";
+
+// Import global variables
+@import "common/variables";
+
+// Import global colors
+@import "common/colors";
+
+// Import mixins
+@import "common/mixins";
+
+// Import core styles
+@import "common/core";
+
+// Import fonts
+@import "../fonts/fonts";
+
+// Import container styles
+@import "components/container";
+
+// Import menu item styles
+@import "components/menu-item";
+
+// Import navbar styles
+@import "components/navbar";
+
+// Import footer styles
+@import "components/footer";
+
+// Import button link styles
+@import "components/button-link";
+
+// Import product categories styles
+@import "pages/shared/sections/product-categories";
+
+// Import two columns content image styles
+@import "components/two-columns-content-image";
+
+// Import number input styles
+@import "components/number-input";
+
+// Import shared page sections styles
+@import "pages/shared/shared";
+
+// Import home page styles
+@import "pages/home-page/home-page";
+
+// Import product category page styles
+@import "pages/product-category-page/product-category-page";
+
+// Import product detail page styles
+@import "pages/product-detail-page/product-detail-page";

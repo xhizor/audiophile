@@ -1,0 +1,16 @@
+.home-product-categories {
+  background-color: $color-brand-gray-light;
+  padding: 12rem 0 17rem;
+
+  & > .c-container {
+    overflow: visible;
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    padding: 15rem 0 9.5rem;
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    padding: 9.2rem 0 12rem;
+  }
+}

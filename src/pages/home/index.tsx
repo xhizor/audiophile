@@ -1,6 +1,10 @@
 import React from "react";
 
 import Layout from "../../components/layout";
+import HomeHero from "./sections/home-hero";
+import HomeProductCategories from "./sections/home-product-categories";
+import HomeProductsSection from "./sections/home-products-section";
+import HomeInfo from "./sections/home-info";
 
 /**
  * Home page.
@@ -10,7 +14,10 @@ import Layout from "../../components/layout";
 const Home: React.FC = () => {
     return (
         <Layout>
-            <div style={{padding: '20rem 0', backgroundColor: 'white'}}>Home</div>
+            <HomeHero/>
+            <HomeProductCategories/>
+            <HomeProductsSection/>
+            <HomeInfo/>
         </Layout>
     )
 };

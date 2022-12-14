@@ -1,0 +1,111 @@
+.home-hero {
+  &__container {
+    display: grid;
+    padding-bottom: 1rem;
+
+    &__content {
+      position: relative;
+      grid-area: 1/-1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 39.5rem;
+      padding-top: 13rem;
+      color: $color-white;
+
+      &__type {
+        margin: 0 0 2.4rem;
+        opacity: .5;
+        font-size: 1.4rem;
+        font-weight: normal;
+        line-height: 1.35;
+        letter-spacing: 1rem;
+        text-transform: uppercase;
+      }
+
+      &__title {
+        margin: 0 0 2.4rem;
+        font-size: 5.6rem;
+        line-height: 1.04;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      &__description {
+        max-width: 35rem;
+        margin: 0 0 4rem;
+        opacity: .75;
+        font-weight: 500;
+        line-height: 1.67;
+      }
+    }
+
+    &__photo {
+      grid-area: 1/-1;
+      max-width: 70rem;
+      margin-left: auto;
+      margin-top: -7%;
+      transform: translateX(5%);
+
+      &__img {
+        width: 100%;
+        height: auto;
+        filter: opacity(0.75) drop-shadow(0 0 0 $color-black);
+      }
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    &__container {
+      padding-bottom: 5.5rem;
+
+      &__content {
+        margin: 0 auto;
+        align-items: center;
+
+        &__title {
+          text-align: center;
+        }
+
+        &__description {
+          text-align: center;
+        }
+      }
+
+      &__photo {
+        transform: none;
+
+        &__img {
+          filter: opacity(0.5) drop-shadow(0 0 0 $color-black);
+        }
+      }
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-mobile) {
+    & > .c-container {
+      padding: 0;
+    }
+
+    &__container {
+      align-items: center;
+      padding-bottom: 0;
+
+      &__content {
+        padding: 0 $padding-page-container-mobile 0;
+
+        &__type {
+          margin-bottom: 1.6rem;
+        }
+
+        &__title {
+          font-size: 3.6rem;
+        }
+
+        &__description {
+          margin-bottom: 2.8rem;
+        }
+      }
+    }
+  }
+}

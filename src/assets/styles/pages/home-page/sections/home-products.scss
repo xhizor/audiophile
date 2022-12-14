@@ -1,0 +1,238 @@
+.home-products {
+  background-color: $color-brand-gray-light;
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    padding-bottom: 20rem;
+  }
+
+  &__featured-product {
+    padding-top: 9.5rem;
+    background-color: $color-brand-orange;
+    border-radius: 8px;
+    overflow: hidden;
+
+    &__decoration {
+      position: absolute;
+      top: -3.5rem;
+      left: -15%;
+
+      &__img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__inner {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      gap: 3rem;
+      max-width: 92rem;
+      margin: 0 auto;
+      padding: 0 2rem;
+      transform: translateY(1.5rem);
+
+      &__photo {
+        max-width: 41rem;
+        flex: 1;
+
+        &__img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &__content {
+        flex: 1;
+        max-width: 35rem;
+        margin-top: 2.5rem;
+
+        &__name {
+          margin: 0 0 2.4rem;
+          width: min-content;
+          color: $color-white;
+          font-size: 5.6rem;
+          line-height: 1.04;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        &__description {
+          max-width: 35rem;
+          margin: 0 0 4rem;
+          color: rgba($color-white, .75);
+          line-height: 1.67;
+        }
+      }
+    }
+  }
+
+  &__product-card {
+    position: relative;
+    display: grid;
+    background-color: $color-brand-gray;
+
+    &__content {
+      grid-area: 1/-1;
+      position: relative;
+      padding: 9% 0 2.5rem 8.5%;
+
+      &__name {
+        margin: 0 0 3.2rem;
+        color: $color-black;
+        font-size: 2.8rem;
+        line-height: 1.35;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+
+    &__photo {
+      grid-area: 1/-1;
+
+      &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__product-two-columns {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__photo {
+      &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+
+    &__content {
+      background-color: $color-brand-gray;
+      border-radius: 8px;
+      padding: 19% 1rem 2.5rem 18%;
+
+      &__name {
+        margin: 0 0 3.2rem;
+        color: $color-black;
+        font-size: 2.8rem;
+        line-height: 1.35;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    &__container {
+      padding-bottom: 9.5rem;
+      gap: 3.2rem;
+    }
+
+    &__featured-product {
+      padding: 5.2rem 0 6.5rem;
+
+      &__decoration {
+        top: -18%;
+        left: -20%;
+
+        &__img {
+          width: 115%;
+        }
+      }
+
+      &__inner {
+        flex-direction: column;
+        align-items: center;
+        transform: none;
+
+        &__photo {
+          &__img {
+            width: 55%;
+            margin: 0 auto;
+          }
+        }
+
+        &__content {
+          text-align: center;
+
+          &__name {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+
+    &__product-two-columns {
+      gap: 1.1rem;
+
+      &__content {
+        padding: 30% 4rem 2.5rem 10%;
+      }
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-mobile) {
+    &__container {
+      padding: 0 0 12rem;
+      gap: 2.4rem;
+    }
+
+    &__featured-product {
+      padding: 5.5rem 0;
+
+      &__decoration {
+        top: -8%;
+        transform: translateX(-12%);
+
+        &__img {
+          width: 140%;
+        }
+      }
+
+      &__inner {
+        &__photo {
+          &__img {
+            width: 65%;
+          }
+        }
+
+        &__content {
+          &__name {
+            font-size: 3.6rem;
+          }
+
+          &__description {
+            margin-bottom: 2.4rem;
+          }
+        }
+      }
+    }
+
+    &__product-card {
+      &__content {
+        padding-top: 10rem;
+      }
+    }
+
+    &__product-two-columns {
+      gap: 2.4rem;
+      grid-template-columns: repeat(1, 1fr);
+
+      &__content {
+        padding: 4rem 8.5%;
+      }
+    }
+  }
+}

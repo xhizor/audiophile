@@ -18,6 +18,13 @@
       justify-content: space-between;
       margin-bottom: 3.6rem;
 
+      &__logo {
+        &:focus-visible {
+          outline: 1.5px dashed $color-brand-orange;
+          outline-offset: 2.5px;
+        }
+      }
+
       &__items {
         display: flex;
         gap: 3.4rem;

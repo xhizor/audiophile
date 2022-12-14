@@ -1,0 +1,19 @@
+.home-info {
+  background-color: $color-brand-gray-light;
+
+  &__container {
+    padding-bottom: 20rem;
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    &__container {
+      padding-bottom: 9.5rem
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-mobile) {
+    &__container {
+      padding-bottom: 12rem;
+    }
+  }
+}

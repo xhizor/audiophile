@@ -1,12 +1,13 @@
 import React from "react";
 import {useParams} from 'react-router-dom';
 
-import {isCategoryExist} from "../../../services/categories-service";
 import {getProductsByCategory} from "../../../services/products-service";
 import TwoColumnsContentImage
     from "../../../components/two-columns-content-image";
 import ResponsiveImage from "../../../components/responsive-image";
 import ButtonLink from "../../../components/button-link";
+import {Product} from "../../../interfaces/Product";
+import ProductItem from "../../../models/ProductItem";
 
 /**
  * Products section of the product category page.
@@ -25,36 +26,37 @@ const ProductCategoryProducts: React.FC = () => {
                     <div
                         className="product-category-products__container__products">
                         {
-                            products.map((product: any, i) => {
-                                const {id, name, description, slug, image} = product;
-                                const imgPath = image?.desktop;
-                                const imgArr = imgPath.split('/');
-                                const imgLocation = imgArr[2];
-                                const imgName = imgArr.at(-1);
+                            products.map((product: Product, i) => {
+                                const productItem = new ProductItem(product);
+                                const {id, name, description, link, image, isNew} = productItem;
 
                                 return (
-                                    <TwoColumnsContentImage
+                                    <div
+                                        className="product-category-products__container__products__item"
                                         key={id}
-                                        title={name}
-                                        description={description}
-                                        image={
-                                            <ResponsiveImage
-                                                imgLocation={imgLocation}
-                                                imgName={imgName}
-                                                imgClass="product-category-products__container__products__item__img"
-                                                imgAlt={name}
-                                            />
-                                        }
-                                        btnLink={
-                                            <ButtonLink
-                                                title="See product"
-                                                link={`/products/${category}/${slug}`}
-                                                color="orange"
-                                            />
-                                        }
-                                        reversed={i % 2 === 0}
-                                        note={product.new ? 'New product' : ''}
-                                    />
+                                    >
+                                        <TwoColumnsContentImage
+                                            title={name}
+                                            description={description}
+                                            image={
+                                                <ResponsiveImage
+                                                    imgLocation={image?.imgLocation}
+                                                    imgName={image?.imgName}
+                                                    imgClass="product-category-products__container__products__item__img"
+                                                    imgAlt={name}
+                                                />
+                                            }
+                                            btnLink={
+                                                <ButtonLink
+                                                    title="See product"
+                                                    link={link}
+                                                    color="orange"
+                                                />
+                                            }
+                                            inversed={i % 2 === 0}
+                                            note={isNew ? 'New product' : ''}
+                                        />
+                                    </div>
                                 )
                             })
                         }

@@ -32,10 +32,13 @@
 @import "components/button-link";
 
 // Import product categories styles
-@import "components/product-categories";
+@import "pages/shared/sections/product-categories";
 
 // Import two columns content image styles
 @import "components/two-columns-content-image";
+
+// Import number input styles
+@import "components/number-input";
 
 // Import shared page sections styles
 @import "pages/shared/shared";
@@ -45,3 +48,6 @@
 
 // Import product category page styles
 @import "pages/product-category-page/product-category-page";
+
+// Import product detail page styles
+@import "pages/product-detail-page/product-detail-page";

@@ -33,7 +33,11 @@ const HomeHero: React.FC = () => {
                             build quality made for the passionate music
                             enthusiast.
                         </p>
-                        <ButtonLink title="See product" color="orange"/>
+                        <ButtonLink
+                            title="See product"
+                            link="/products/headphones/xx99-mark-two-headphones"
+                            color="orange"
+                        />
                     </div>
                 </div>
             </div>

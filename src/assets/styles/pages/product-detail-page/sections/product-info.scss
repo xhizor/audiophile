@@ -1,0 +1,250 @@
+.product-info {
+  background-color: $color-brand-gray-light;
+
+  &__container {
+    padding: 8rem 0 16rem;
+
+    &__back {
+      @include linkStyles(rgba($color-black, .5), rgba($color-black, .5));
+
+      font-weight: 500;
+      line-height: 1.67;
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 16rem;
+      margin-top: 5.5rem;
+
+      &__overview {
+        &__img {
+          width: 100%;
+          height: auto;
+        }
+
+        &__extra {
+          margin-top: 3.2rem;
+
+          &__price {
+            font-size: 1.8rem;
+            letter-spacing: 1.28px;
+            line-height: 1.38;
+          }
+
+          &__cta {
+            margin-top: 4.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+          }
+        }
+
+        .c-two-columns-content-image {
+          &__photo {
+            flex: 1;
+            width: 100%;
+          }
+
+          &__content {
+            &__title {
+              width: min-content;
+            }
+          }
+        }
+      }
+
+      &__description {
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+
+        &__features {
+          flex: 1;
+          max-width: 62rem;
+
+          &__content {
+            margin: 0;
+            color: rgba($color-black, .5);
+            line-height: 1.67;
+          }
+        }
+
+        &__extra {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          max-width: 35rem;
+
+          &__items {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &__item {
+              display: flex;
+              align-items: center;
+              gap: 2.4rem;
+
+              &__quantity {
+                color: $color-brand-orange;
+                font-weight: bold;
+                line-height: 1.67;
+              }
+
+              &__name {
+                margin: 0;
+                color: rgba($color-black, .5);
+                line-height: 1.67;
+                text-transform: capitalize;
+              }
+            }
+          }
+        }
+      }
+
+      &__gallery {
+        display: grid;
+        grid-template-areas: 'first third' 'second third';
+        grid-gap: 3.2rem 3rem;
+
+        &__photo {
+          &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+
+          &--1 {
+            grid-area: first;
+          }
+
+          &--2 {
+            grid-area: second;
+          }
+
+          &--3 {
+            grid-area: third;
+          }
+        }
+      }
+    }
+
+    &__heading {
+      margin: 0 0 3.2rem;
+      color: $color-black;
+      font-size: 3.2rem;
+      line-height: 1.12;
+      letter-spacing: 1.42px;
+      text-transform: uppercase;
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    &__container {
+      padding: 3.5rem 0 12rem;
+
+      &__inner {
+        gap: 12rem;
+
+        &__overview {
+          .c-two-columns-content-image {
+            align-items: flex-start;
+
+            &__content {
+              & > * {
+                text-align: left;
+              }
+            }
+          }
+
+          &__extra {
+            &__cta {
+              margin-top: 3.1rem;
+            }
+          }
+        }
+
+        &__description {
+          flex-direction: column;
+          gap: 0;
+
+          &__extra {
+            margin-top: 12rem;
+            max-width: 55rem;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        }
+
+        &__gallery {
+          grid-gap: 2rem 1.8rem
+        }
+      }
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-mobile) {
+    &__container {
+      padding-top: 1.6rem;
+
+      &__inner {
+        margin-top: 2.4rem;
+        gap: 8.8rem;
+
+        &__overview {
+          .c-two-columns-content-image {
+            flex-direction: column-reverse;
+
+            &__photo {
+              padding-bottom: 4rem;
+            }
+
+            &__content {
+              &__note {
+                margin-bottom: 2.4rem;
+              }
+
+              &__title {
+                margin-bottom: 2.4rem;
+              }
+
+              &__cta {
+                margin-top: 3rem;
+                justify-content: space-between;
+              }
+            }
+          }
+
+          &__extra {
+            margin-top: 2.4rem;
+          }
+        }
+
+        &__description {
+          &__extra {
+            margin-top: 8.8rem;
+            flex-direction: column;
+
+            &__items {
+              &__item {
+                gap: 2.1rem;
+              }
+            }
+          }
+        }
+
+        &__gallery {
+          grid-template-areas: 'first' 'second' 'third';
+        }
+      }
+
+      &__heading {
+        margin-bottom: 2.4rem;
+        font-size: 2.4rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}

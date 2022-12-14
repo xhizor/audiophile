@@ -12,7 +12,7 @@ const ProductCategoryHero: React.FC = () => {
 
     return (
         <section
-            className={`product-category-hero ${!isCategoryExist(category) ? 'no-category' : ''}`}>
+            className="product-category-hero">
             <div className="c-container">
                 <div className="product-category-hero__container">
                     <h1 className="product-category-hero__container__title">

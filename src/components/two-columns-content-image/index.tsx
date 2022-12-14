@@ -7,9 +7,10 @@ interface TwoColumnsContentImageProps {
     title: string,
     description?: string,
     image: React.ReactElement<typeof ResponsiveImage>,
-    reversed?: boolean,
+    inversed?: boolean,
     note?: string,
-    btnLink?: React.ReactElement<typeof ButtonLink>
+    btnLink?: React.ReactElement<typeof ButtonLink>,
+    children?: React.ReactNode
 }
 
 /**
@@ -18,15 +19,16 @@ interface TwoColumnsContentImageProps {
  * @param title
  * @param description
  * @param image
- * @param reversed
+ * @param inversed
  * @param note
  * @param btnLink
+ * @param children
  * @constructor
  */
-const TwoColumnsContentImage: React.FC<TwoColumnsContentImageProps> = ({title, description, image, reversed, note, btnLink}: TwoColumnsContentImageProps) => {
+const TwoColumnsContentImage: React.FC<TwoColumnsContentImageProps> = ({title, description, image, inversed, note, btnLink, children}: TwoColumnsContentImageProps) => {
     return (
         <div
-            className={`c-two-columns-content-image ${reversed ? 'c-two-columns-content-image--inversed' : ''}`}>
+            className={`c-two-columns-content-image ${inversed ? 'c-two-columns-content-image--inversed' : ''}`}>
             <div className="c-two-columns-content-image__content">
                 {note &&
                 <span className="c-two-columns-content-image__content__note">
@@ -38,9 +40,13 @@ const TwoColumnsContentImage: React.FC<TwoColumnsContentImageProps> = ({title, d
                 <p className="c-two-columns-content-image__content__description">
                     {description}
                 </p>
+                {}
+                {btnLink &&
                 <div className="c-two-columns-content-image__content__cta">
                     {btnLink}
                 </div>
+                }
+                {children}
             </div>
             <div className="c-two-columns-content-image__photo">
                 {image}

@@ -1,25 +1,25 @@
 import React from "react";
 
 import Layout from "../../components/layout";
-import ProductCategoryHero from "./sections/product-category-hero";
-import ProductCategoryProducts from "./sections/product-category-products";
+import ProductInfo from "./sections/product-info";
+import ProductItems from "./sections/product-items";
 import ProductCategories from "../shared/product-categories";
 import AudioGearInfo from "../shared/audio-gear-info";
 
 /**
- * Product category page.
+ * Product detail page.
  *
  * @constructor
  */
-const ProductCategory: React.FC = () => {
+const ProductDetail: React.FC = () => {
     return (
         <Layout>
-            <ProductCategoryHero/>
-            <ProductCategoryProducts/>
+            <ProductInfo/>
+            <ProductItems/>
             <ProductCategories/>
             <AudioGearInfo/>
         </Layout>
     )
 };
 
-export default ProductCategory;
+export default ProductDetail;

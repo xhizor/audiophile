@@ -1,0 +1,77 @@
+.c-two-columns-content-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+
+  &__content {
+    flex: 1;
+    max-width: 44.5rem;
+
+    &__title {
+      margin: 0 0 3.2rem;
+      color: $color-black;
+      font-size: 4rem;
+      line-height: 1.1;
+      letter-spacing: 1.42px;
+      text-transform: uppercase;
+
+      span {
+        color: $color-brand-orange;
+      }
+    }
+
+    &__description {
+      margin: 0;
+      color: rgba($color-black, .5);
+      font-weight: 500;
+      line-height: 1.67;
+    }
+  }
+
+  &__photo {
+    flex: 1.5;
+    max-width: 54rem;
+
+    &__img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    flex-direction: column-reverse;
+    gap: 0;
+
+    &__content {
+      max-width: 56rem;
+
+      &__title {
+        text-align: center;
+      }
+
+      &__description {
+        text-align: center;
+      }
+    }
+
+    &__photo {
+      max-width: none;
+      padding-bottom: 9%;
+    }
+  }
+
+  @include respondBetween(0, $breakpoint-mobile) {
+    &__photo {
+      padding-bottom: 13%;
+    }
+
+    &__content {
+      &__title {
+        font-size: 2.8rem;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

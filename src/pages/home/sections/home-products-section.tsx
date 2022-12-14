@@ -56,8 +56,11 @@ const FeaturedProduct: React.FC = () => {
                         Upgrade to premium speakers that are phenomenally built
                         to deliver truly remarkable sound.
                     </p>
-                    <ButtonLink link="/products/zx9-speaker" title="See product"
-                                color="black"/>
+                    <ButtonLink
+                        link="/products/speakers/zx9-speaker"
+                        title="See product"
+                        color="black"
+                    />
                 </div>
             </div>
         </div>
@@ -76,7 +79,10 @@ const ProductCard: React.FC = () => {
                 <h3 className="home-products__product-card__content__name">
                     ZX7 Speaker
                 </h3>
-                <ButtonLink title="See product" link="/products/zx7-speaker"/>
+                <ButtonLink
+                    title="See product"
+                    link="/products/speakers/zx7-speaker"
+                />
             </div>
             <div className="home-products__product-card__photo">
                 <ResponsiveImage
@@ -110,7 +116,10 @@ const ProductTwoColumns: React.FC = () => {
                 <h3 className="home-products__product-two-columns__content__name">
                     YX1 Earphones
                 </h3>
-                <ButtonLink title="See product" link="/products/yx1-earphones"/>
+                <ButtonLink
+                    title="See product"
+                    link="/products/earphones/yx1-earphones"
+                />
             </div>
         </div>
     )

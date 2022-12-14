@@ -1,17 +1,13 @@
 import React from "react";
+import {ProductImage} from "../../interfaces/Product";
 
 interface ResponsiveImageProps {
     imgLocation: string,
-    imgName: string,
+    imgName: string | undefined,
     imgClass: string,
     imgAlt: string
 }
 
-interface ResponsiveImageType {
-    desktop: string | null,
-    tablet: string | null,
-    mobile: string | null
-}
 
 /**
  *
@@ -22,10 +18,10 @@ interface ResponsiveImageType {
  * @constructor
  */
 const ResponsiveImage: React.FC<ResponsiveImageProps> = ({imgLocation, imgName, imgClass, imgAlt}: ResponsiveImageProps) => {
-    const image: ResponsiveImageType = {
-        desktop: null,
-        tablet: null,
-        mobile: null
+    const image: ProductImage = {
+        desktop: '',
+        tablet: undefined,
+        mobile: undefined
     };
 
     try {

@@ -2,7 +2,7 @@
   background-color: $color-brand-gray-light;
 
   &__container {
-    padding: 16rem 0 24rem;
+    padding: 16rem 0 12rem;
 
     &__products {
       display: flex;
@@ -15,13 +15,19 @@
           height: auto;
           border-radius: 8px;
         }
+
+        .c-two-columns-content-image {
+          &__content__title {
+            width: min-content;
+          }
+        }
       }
     }
   }
 
   @include respondBetween(0, $breakpoint-tablet) {
     &__container {
-      padding: 12rem 0 17rem;
+      padding: 12rem 0 2rem;
 
       &__products {
         gap: 12rem;
@@ -31,7 +37,7 @@
 
   @include respondBetween(0, $breakpoint-mobile) {
     &__container {
-      padding-top: 6.5rem;
+      padding: 6.5rem 0 8rem;
     }
   }
 }

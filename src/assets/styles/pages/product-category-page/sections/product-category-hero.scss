@@ -13,9 +13,6 @@
     }
   }
 
-  &.no-category {
-    background-color: $color-brand-gray-light;
-  }
 
   @include respondBetween(0, $breakpoint-tablet) {
     &__container {

@@ -1,0 +1,16 @@
+.product-category-product-categories {
+  background-color: $color-brand-gray-light;
+  padding-bottom: 17rem;
+
+  & > .c-container {
+    overflow: visible;
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    padding-bottom: 9.5rem;
+  }
+
+  @include respondBetween(0, $breakpoint-tablet) {
+    padding-bottom: 12rem;
+  }
+}

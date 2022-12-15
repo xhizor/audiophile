@@ -1,12 +1,25 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 interface NumberInputProps {
     min: number;
     max: number;
+    onChange: Function
 }
 
-const NumberInput: React.FC<NumberInputProps> = ({min, max}: NumberInputProps) => {
+/**
+ * Number input component.
+ *
+ * @param min
+ * @param max
+ * @param onChange
+ * @constructor
+ */
+const NumberInput: React.FC<NumberInputProps> = ({min, max, onChange}: NumberInputProps) => {
     const [value, setValue] = useState<number>(min);
+
+    useEffect(() => {
+        onChange(value);
+    }, [value]);
 
     /**
      * Input number change handler.
@@ -15,6 +28,7 @@ const NumberInput: React.FC<NumberInputProps> = ({min, max}: NumberInputProps) =
      */
     const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = Number(e.target.value);
+        if (newValue > max || newValue < min) return;
 
         setValue(newValue);
     };

@@ -4,6 +4,8 @@ The website is built with React JS, TypeScript & Sass, and it's fully responsive
 
 ## Available development scripts
 
+Run `npm i` to install all required dependencies.
+
 In the project directory, you can run:
 
 ### `npm start`

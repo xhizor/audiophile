@@ -22,6 +22,7 @@ class ProductItem {
     category: string;
     images: {}[] = [];
     featuredItems: {}[] = [];
+    quantity: number = 0;
 
     /**
      *

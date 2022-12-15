@@ -6,6 +6,7 @@ import MenuItem from "../../../interfaces/MenuItem";
 import pageLogo from '../../../assets/images/icons/logo.svg';
 import {ReactComponent as CartIcon} from '../../../assets/images/icons/icon-cart.svg';
 import {ReactComponent as HamburgerIcon} from '../../../assets/images/icons/icon-hamburger.svg';
+import {getCartTotalQuantity} from "../../../services/cart-service";
 
 /**
  * Header component.
@@ -14,6 +15,7 @@ import {ReactComponent as HamburgerIcon} from '../../../assets/images/icons/icon
  */
 const Header: React.FC = () => {
     const [isMenuVisible, setMenuVisibility] = useState<boolean>(false);
+    const totalQuantity = getCartTotalQuantity();
 
     /**
      * Toggles the navbar menu visibility on tablet and mobile view.
@@ -64,6 +66,11 @@ const Header: React.FC = () => {
                               className="c-navbar__container__cart__icon">
                             <CartIcon/>
                         </Link>
+                        {totalQuantity
+                            ? <span
+                                className="c-navbar__container__cart__badge">{totalQuantity}</span>
+                            : null
+                        }
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 
 import {getProductBySlug} from "../../../services/products-service";
@@ -7,8 +7,8 @@ import TwoColumnsContentImage
 import ResponsiveImage from "../../../components/responsive-image";
 import ProductItem from "../../../models/ProductItem";
 import {ProductExtraItem} from "../../../interfaces/Product";
-import ButtonLink from "../../../components/button-link";
 import NumberInput from "../../../components/number-input";
+import {addToCart} from "../../../services/cart-service";
 
 /**
  * Product info section of the product detail page.
@@ -18,6 +18,7 @@ import NumberInput from "../../../components/number-input";
 const ProductInfo: React.FC = () => {
     const {productSlug} = useParams();
     const navigate = useNavigate();
+    const [productQuantity, setProductQuantity] = useState<number>(0);
 
     const product = getProductBySlug(productSlug);
     if (!product) return null;
@@ -32,6 +33,16 @@ const ProductInfo: React.FC = () => {
         e.preventDefault();
         navigate(`/products/${category}`);
     });
+
+    /**
+     * Adds the product to the cart.
+     *
+     * @param e
+     */
+    const addProductToCart = (e: React.MouseEvent) => {
+        e.preventDefault();
+        addToCart(product, productQuantity);
+    };
 
     return (
         <section className="product-info">
@@ -65,10 +76,15 @@ const ProductInfo: React.FC = () => {
                                     </strong>
                                     <div
                                         className="product-info__container__inner__overview__extra__cta">
-                                        <NumberInput min={1} max={10}/>
-                                        <ButtonLink title="Add to cart"
-                                                    color="orange"
+                                        <NumberInput min={1}
+                                                     max={5}
+                                                     onChange={(value: number) => setProductQuantity(value)}
                                         />
+                                        <a href="#"
+                                           className="c-button-link c-button-link--orange"
+                                           onClick={addProductToCart}>
+                                            Add to cart
+                                        </a>
                                     </div>
                                 </div>
                             </TwoColumnsContentImage>

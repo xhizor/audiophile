@@ -31,6 +31,15 @@
 
       &__products {
         gap: 12rem;
+
+        &__item {
+          .c-two-columns-content-image {
+            &__content__title {
+              margin-left: auto;
+              margin-right: auto;
+            }
+          }
+        }
       }
     }
   }
